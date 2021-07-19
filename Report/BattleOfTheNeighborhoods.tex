@@ -101,16 +101,118 @@ The obtained data is compiled in Table~\ref{tab:data}. Inspecting the data shows
 
 \section{Methodology}
 \label{sec:methodology}
+Machine learning techniques used in this study are \textbf{Linear Regression}, \textbf{Robust Scaling} and \textbf{K-Means Clustering}. This section will briefly introduce these methods. 
 
+As mentioned in Section~\ref{sec:data}, the missing data in the feature set has been calculated using a Linear Regression model. Training data for the model is from all cities other than Vienna, with \texttt{X} as the number of vegetarians in each city and \texttt{y} as the number of vegans in each city. No other features are used in this model as they are not thought to be related to the target value (i.e. the latitude/longitude). 
+
+The cities are clustered using a K-Means algorithm, which clusters the data based on a set of features. These features are first scaled, since otherwise the clustering would almost exclusively be based on the "disposable income"-feature, which is orders of magnitude larger than the other features. Robust Scaling from the scikit-learn preprocessing toolbox is used to perform this scaling. The K-Means algorithm separates the samples in $k$ groups, minimizing the within-cluster sum-of-squares of the features. Because of the limited number of cities included in this study, they will be clustered in $ k = 5$ groups. 
 
 \section{Results}
 \label{sec:results}
+The clusters obtained by the K-Means algorithm are visualized in Fig.~\ref{fig:clusteredCities}. The data for the clustered cities is presented in Tables~\ref{tab:cluster0}-\ref{tab:cluster4}, for cluster 0 to 4, respectively (numbered in true Python fashion). 
+\begin{figure}
+	\includegraphics[width=\linewidth]{clusteredCities}
+	\caption{Clustered cities in Europe. }
+	\label{fig:clusteredCities}
+\end{figure}
+
+\begin{table}[htbp!]
+	\centering
+	\caption{Cities in cluster 0.}
+	\label{tab:cluster0}
+	\scalebox{0.85}{\begin{tabular}{llp{2.5cm}p{2.5cm}p{2.5cm}p{2.1cm}}
+			\toprule
+			\textbf{Country} 	& \textbf{Capital}  & \textbf{Percentage of vegetarians, \%} & \textbf{Percentage of vegans, \%} & \textbf{Number of vegetarian restaurants, -} & \textbf{Disposable income, \$} \\ \midrule
+			Czech Republic	& Prague	& 5.0	& 1.0 & 	70 & 	17984 \\ 
+			France			& Paris		& 5.2	& 1.1 & 	67 & 	25865 \\ 
+			Portugal		& Lisbon	& 1.2	& 0.6 & 	11 & 	15403 \\ 
+			Spain			& Madrid	& 1.5	& 0.2 & 	62 & 	21788 \\ 
+			\bottomrule
+	\end{tabular}}
+\end{table}
+
+\begin{table}[htbp!]
+	\centering
+	\caption{Cities in cluster 1}
+	\label{tab:cluster1}
+	\scalebox{0.85}{\begin{tabular}{llp{2.5cm}p{2.5cm}p{2.5cm}p{2.1cm}}
+			\toprule
+			\textbf{Country} 	& \textbf{Capital}  & \textbf{Percentage of vegetarians, \%} & \textbf{Percentage of vegans, \%} & \textbf{Number of vegetarian restaurants, -} & \textbf{Disposable income, \$} \\ \midrule
+			Austria			& Vienna	& 10.0	& 2.8 & 	61 & 	32496 \\ 
+			Belgium			& Brussels	& 7.0	& 1.0 & 	55 & 	29361 \\ 
+			Denmark			& Copenhagen& 10.0	& 4.0 & 	71 & 	28926 \\ 
+			Finland			& Helsinki	& 11.0	& 2.0 & 	95 & 	26774 \\ 
+			Germany			& Berlin	& 12.0	& 2.0 & 	57 & 	27569 \\ 
+			Italy			& Rome		& 8.9	& 2.2 & 	36 & 	23023 \\ 
+			Ireland			& Dublin	& 8.4	& 2.0 & 	47 & 	25933 \\ 
+			Sweden			& Stockholm	& 12.0	& 4.0 & 	65 & 	29765 \\ 
+			\bottomrule
+	\end{tabular}}
+\end{table}
+
+\begin{table}[htbp!]
+	\centering
+	\caption{Cities in cluster 2}
+	\label{tab:cluster2}
+	\scalebox{0.85}{\begin{tabular}{llp{2.5cm}p{2.5cm}p{2.5cm}p{2.1cm}}
+			\toprule
+			\textbf{Country} 	& \textbf{Capital}  & \textbf{Percentage of vegetarians, \%} & \textbf{Percentage of vegans, \%} & \textbf{Number of vegetarian restaurants, -} & \textbf{Disposable income, \$} \\ \midrule
+			United Kingdom	& London	& 21.3	& 4.4 &    100 & 	22603 \\ 
+			\bottomrule
+	\end{tabular}}
+\end{table}
+
+\begin{table}[htbp!]
+	\centering
+	\caption{Cities in cluster 3}
+	\label{tab:cluster3}
+	\scalebox{0.85}{\begin{tabular}{llp{2.5cm}p{2.5cm}p{2.5cm}p{2.1cm}}
+			\toprule
+			\textbf{Country} 	& \textbf{Capital}  & \textbf{Percentage of vegetarians, \%} & \textbf{Percentage of vegans, \%} & \textbf{Number of vegetarian restaurants, -} & \textbf{Disposable income, \$} \\ \midrule
+			Netherlands		& Amsterdam	& 5.0	& 1.0 & 	23 & 	29571 \\ 
+			Norway			& Oslo		& 9.0	& 4.0 & 	19 & 	35542 \\ 
+			Switzerland		& Bern		& 5.0	& 1.0 & 	9  & 	37749 \\ 
+			\bottomrule
+	\end{tabular}}
+\end{table}
+
+\begin{table}[htbp!]
+	\centering
+	\caption{Cities in cluster 4}
+	\label{tab:cluster4}
+	\scalebox{0.85}{\begin{tabular}{llp{2.5cm}p{2.5cm}p{2.5cm}p{2.1cm}}
+			\toprule
+			\textbf{Country} 	& \textbf{Capital}  & \textbf{Percentage of vegetarians, \%} & \textbf{Percentage of vegans, \%} & \textbf{Number of vegetarian restaurants, -} & \textbf{Disposable income, \$} \\ \midrule
+			Poland			& Warsaw	& 8.4	& 7.0 & 	23 & 	16507 \\ 
+			\bottomrule
+	\end{tabular}}
+\end{table}
 
 \section{Discussion}
 \label{sec:discussion}
+Based on the data in Tables~\ref{tab:cluster0}-\ref{tab:cluster4}, the clusters can be described as:
+\begin{enumerate}
+	\item Cluster 0 contains the cities with low numbers of vegetarians and vegans, as well as relatively low disposable income, the number of vegetarian/vegan restaurants is medium for most cities in this cluster.
+	\item Cluster 1 contains the cities with a high percentage of vegetarians and vegans, a medium-to-high number of current vegetarian restaurants and a medium-to-high disposable income.
+	\item Cluster 2 contains the city with a very high number of vegetarians and vegans, a current number of vegetarian/vegan restaurants that is at the limit of what Foursquare can offer (so it is likely even higher!) and a medium disposable income.
+	\item Cluster 3 contains the cities with a low-to-medium number of vegetarians and vegans, a low number of vegetarian restaurants and a high disposable income.
+	\item The last cluster, Cluster 4, contains one city with a medium number of vegetarians, low number of current vegetarian/vegan restaurants and the lowest disposable income.
+\end{enumerate}
+
+Cities more suitable for the client's first European vegetarian/vegan restaurants can be found in clusters 1 and 2. Especially cluster 2, consisting of just London, is a great place to start with a new vegetarian/vegan restaurant, due to the very high number of vegetarians/vegans and the high number of current vegetarian/vegan restaurants indicates that the client's restaurant is likely to succeed here too.
+
+Cluster 0 is less suitable because there is both a relatively low number of vegetarians and vegans and the disposable income is relatively low. Cluster 3 is less suitable because it has a relatively low-to-medium number of vegetarians and vegans and despite a high income, there are currently not many vegetarian/vegan restaurants, possibly indicating that these are not likely to succeed in these cities. Cluster 4 is less suitable because despite the medium number of vegetarians and vegans, the lowest disposable income of the cities in this study is a likely cause for the low number of current vegetarian/vegan restaurants, indicating that the client's restaurant is less likely to succeed here too. 
+
 
 \section{Conclusion}
 \label{sec:conclusion}
+For an expansion from North America to Europe for our client, we advise that they start their first restaurant in London, United Kingdom. If this restaurant proves a success among Europeans, the advise is that the client expands further to Vienna, Brussels, Copenhagen, Helsinki, Berlin, Rome, Dublin and Stockholm. Especially with vegetarianism/veganism on the rise \cite{wikiVega} among younger people, we expect the client to successfully expand their business into Europe. 
+
+\section{Future recommendations}
+This study has been limited by the limits imposed by Foursquare. The imposed limit means that the circle of 3-km diameter cannot be increased to obtain the number of current vegetarian/vegan restaurants. Similarly, ideally this study would look at the \textit{proportion} of these restaurants out of all restaurants, but this number will go well over the limit for Foursquare. 
+
+Other features that are ideally to be included in this study is the change in the proportion of vegetarians/vegans over time. Since this is on the rise, especially among young people \cite{wikiVega}, this information would be a great indicator to spot trendy cities for vegans. 
+
 
 \newpage
 \appendix
