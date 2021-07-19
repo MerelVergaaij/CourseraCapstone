@@ -17,7 +17,7 @@
 }
 
 @Misc{wikiVega,
-  author       = {{Wikimedia Foundation}},
+  author       = {Wikimedia Foundation},
   howpublished = {online, \url{https://en.wikipedia.org/wiki/Disposable\_household\_and\_per\_capita\_income}},
   note         = {accessed on July 18th, 2021},
   title        = {Disposable household and per capita income},

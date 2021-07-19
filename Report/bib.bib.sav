@@ -1,3 +1,27 @@
 % Encoding: UTF-8
 
+@Misc{latlong,
+  author       = {{Pareto Software, LLC.}},
+  howpublished = {online, \url{https://simplemaps.com/static/data/world-cities/basic/simplemaps_worldcities_basicv1.73.zip}},
+  note         = {accessed on July 18th, 2021},
+  title        = {World Cities Database},
+  year         = {2021},
+}
+
+@Misc{wikiIncome,
+  author       = {{Wikimedia Foundation}},
+  howpublished = {online, \url{https://en.wikipedia.org/wiki/Vegetarianism\_by\_country}},
+  note         = {accessed on July 18th, 2021},
+  title        = {Vegetarianism by Country},
+  year         = {2021},
+}
+
+@Misc{wikiVega,
+  author       = {{Wikimedia Foundation}},
+  howpublished = {online, \url{https://en.wikipedia.org/wiki/Disposable\_household\_and\_per\_capita\_income}},
+  note         = {accessed on July 18th, 2021},
+  title        = {Disposable household and per capita income},
+  year         = {2021},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

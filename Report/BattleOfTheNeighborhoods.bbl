@@ -1,11 +1,20 @@
-\begin{thebibliography}{0}
-\newcommand{\enquote}[1]{``#1''}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\providecommand{\urlprefix}{URL }
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
-  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
-  \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{1}
+
+\bibitem{latlong}
+{Pareto Software, LLC.}, ``World cities database.'' online,
+  \url{https://simplemaps.com/static/data/world-cities/basic/simplemaps_worldcities_basicv1.73.zip},
+  2021.
+\newblock accessed on July 18th, 2021.
+
+\bibitem{wikiVega}
+{Wikimedia Foundation}, ``Disposable household and per capita income.'' online,
+  \url{https://en.wikipedia.org/wiki/Disposable\_household\_and\_per\_capita\_income},
+  2021.
+\newblock accessed on July 18th, 2021.
+
+\bibitem{wikiIncome}
+{Wikimedia Foundation}, ``Vegetarianism by country.'' online,
+  \url{https://en.wikipedia.org/wiki/Vegetarianism\_by\_country}, 2021.
+\newblock accessed on July 18th, 2021.
 
 \end{thebibliography}
