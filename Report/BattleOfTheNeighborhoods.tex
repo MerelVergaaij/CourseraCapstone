@@ -36,7 +36,7 @@ Data used for clustering of the cities in this study are the following:
 \end{enumerate}
 Wherever data is obtained for a country rather than just the city, it is assumed that this value is a sufficient approximation for the data of the city. 
 
-The obtained data is compiled in Table~\ref{tab:data}. The reader is referred to the Jupyter Notebook attached to this report to see how the data has been obtained through webscraping and Foursquare. 
+The obtained data is compiled in Table~\ref{tab:data}. Inspecting the data shows no extreme outliers and the only missing value, proportion of vegans in Austria, has been calculated using a Linear Regression model. While the number of reported vegetarian/vegan restaurants in Bern and Lisbon appears low, this can be explained by the relatively low number of vegetarians/vegans in those countries, so this does not necessarily mean that these numbers are inaccurate. The reader is referred to the Jupyter Notebook attached to this report to see how the data has been obtained through webscraping and Foursquare. 
 
 \begin{table}[htbp!]
 	\centering
@@ -78,7 +78,7 @@ The obtained data is compiled in Table~\ref{tab:data}. The reader is referred to
 	\scalebox{0.85}{\begin{tabular}{llp{2.5cm}p{2.5cm}p{2.5cm}p{2.1cm}}
 		\toprule
 		\textbf{Country} 	& \textbf{Capital}  & \textbf{Percentage of vegetarians, \%} & \textbf{Percentage of vegans, \%} & \textbf{Number of vegetarian restaurants, -} & \textbf{Disposable income, \$} \\ \midrule
-		Austria			& Vienna	& 10.0	& 2.9 & 	61 & 	32496 \\ 
+		Austria			& Vienna	& 10.0	& 2.8 & 	61 & 	32496 \\ 
 		Belgium			& Brussels	& 7.0	& 1.0 & 	55 & 	29361 \\ 
 		Czech Republic	& Prague	& 5.0	& 1.0 & 	70 & 	17984 \\ 
 		Denmark			& Copenhagen& 10.0	& 4.0 & 	71 & 	28926 \\ 
@@ -101,6 +101,7 @@ The obtained data is compiled in Table~\ref{tab:data}. The reader is referred to
 
 \section{Methodology}
 \label{sec:methodology}
+
 
 \section{Results}
 \label{sec:results}
